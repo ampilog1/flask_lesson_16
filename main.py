@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -24,10 +24,25 @@ def contacts():
     return render_template('contacts.html', name=developer_name)
 
 
-@app.get('/result/')
+@app.get('/results/')
 def result():
     data = ['python', 'js', 'java', 'sql', 'lua']
-    return render_template('result.html', data=data)
+    return render_template('results.html', data=data)
+
+
+@app.get('/run/')
+def run_get():
+    with open('main.txt', 'r') as f:
+        text = f.read()
+    return render_template('form.html', text=text)
+
+
+@app.post('/run/')
+def run_post():
+    text = request.form['input_text']
+    with open('main.txt', 'a') as f:
+        f.write(f'{text}\n')
+    return render_template('results.html', text=text)
 
 
 if __name__ == '__main__':

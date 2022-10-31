@@ -15,7 +15,22 @@
         <li>
             <a href="/results/">Результаты</a>
         </li>
-    </ul>
-     {{data}}
+       <li>
+              <a href="/form/">форма</a>
+       </li>
+     </ul>
+
+     {% if data %}
+     <ul>
+         {% for item in data %}
+             <li>
+                 {{item}}
+             </li>
+         {% endfor %}
+     </ul>
+     {% else %}
+         Данных нет
+     {% endif %}
+     {{text}}
 </body>
 </html>
