@@ -1,20 +1,13 @@
 from flask import Flask, render_template, request
+from Flask_parser import parce
 
 app = Flask(__name__)
 
 
 @app.get("/")
 def index():
-    main_data = {
-        'a': 'A',
-        'b': 'B',
-        'c': 'C'
-    }
-    context = {
-        'name': 'Leo',
-        'age': 99
-    }
-    return render_template('index.html', main_data=main_data, **context)
+    main_data = {'https://v-a-c.org/ges2'}
+    return render_template('index.html', main_data=main_data)
 
 
 @app.get("/contacts/")
@@ -26,15 +19,14 @@ def contacts():
 
 @app.get('/results/')
 def result():
-    data = ['python', 'js', 'java', 'sql', 'lua']
+    data = parce()
     return render_template('results.html', data=data)
 
 
 @app.get('/run/')
 def run_get():
-    with open('main.txt', 'r') as f:
-        text = f.read()
-    return render_template('form.html', text=text)
+    main_data = {'https://v-a-c.org/ges2'}
+    return render_template('form.html', text=main_data)
 
 
 @app.post('/run/')
