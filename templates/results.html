@@ -16,21 +16,22 @@
             <a href="/results/">Результаты</a>
         </li>
        <li>
-              <a href="/form/">форма</a>
+              <a href="/run/">форма</a>
        </li>
      </ul>
-
+     <p>Что нового на сайте ГЭС-2</p>
+     {{text}}
      {% if data %}
      <ul>
-         {% for item in data %}
+         {% for key in data.items() %}
              <li>
-                 {{item}}
+                 {{ key }} : {{ data[key] }}
              </li>
          {% endfor %}
      </ul>
      {% else %}
          Данных нет
      {% endif %}
-     {{text}}
+    <p>здесь должен быть текст {{text1}}</p>
 </body>
 </html>

@@ -31,10 +31,10 @@ def run_get():
 
 @app.post('/run/')
 def run_post():
-    text = request.form['input_text']
-    with open('main.txt', 'a') as f:
-        f.write(f'{text}\n')
-    return render_template('results.html', text=text)
+    text1 = request.form['input_text']
+    # with open('main.txt', 'a') as f:
+    #     f.write(f'{text}\n')
+    return render_template('results.html', text=text1)
 
 
 if __name__ == '__main__':
