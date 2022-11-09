@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>результаты</title>
+</head>
+<body>
+     <ul>
+        <li>
+            <a href="/">Главная</a>
+        </li>
+        <li>
+            <a href="/contacts/">Контакты</a>
+        </li>
+        <li>
+            <a href="/results/">Результаты</a>
+        </li>
+       <li>
+              <a href="/run/">форма</a>
+       </li>
+     </ul>
+     <p>Что нового на сайте ГЭС-2</p>
+     {{text}}
+     {% if data %}
+     <ul>
+         {% for key in data.items() %}
+             <li>
+                 {{ key }} : {{ data[key] }}
+             </li>
+         {% endfor %}
+     </ul>
+     {% else %}
+         Данных нет
+     {% endif %}
+    <p>здесь должен быть текст {{text1}}</p>
+</body>
+</html>

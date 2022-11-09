@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма</title>
+</head>
+<body>
+      <ul>
+              <li>
+                  <a href="/">Главная</a>
+              </li>
+              <li>
+                  <a href="/contacts/">Контакты</a>
+              </li>
+              <li>
+                  <a href="/results/">Результаты</a>
+              </li>
+              <li>
+                  <a href="/run/">форма</a>
+              </li>
+      </ul>
+      <ul>
+          {{main_data}}
+      </ul>
+      <form metod="post">
+          <input type="text" name="input_text">
+          <button type="submit">отправить</button>
+      </form>
+      {{text1}}
+</body>
+</html>
